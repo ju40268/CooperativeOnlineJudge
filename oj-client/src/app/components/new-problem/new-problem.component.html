@@ -1,0 +1,26 @@
+<form class="ui form">
+    <div class="required field">
+      <label>Problem Name</label>
+      <input type="text" placeholder="Problem Name" required="" [(ngModel)]="newProblem.name" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="required field">
+      <label>Problem Description</label>
+      <textarea [(ngModel)]="newProblem.desc" [ngModelOptions]="{standalone: true}"></textarea>
+      <!-- <input type="textarea" name="problem-description" placeholder="Problem Description" required=""> -->
+    </div>
+    <div class="six wide field">
+        <label>Problem Difficulty</label>
+        <div class="two fields">
+            <div class="required field">
+            <select class="ui fluid search dropdown" [(ngModel)]="newProblem.difficulty" [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let difficulty of difficulties" [value]="difficulty">
+                  {{difficulty}}
+              </option>
+            </select>
+          </div>
+        </div>
+        </div>
+    
+ 
+    <button class="ui olive button" type="submit" (click)="addProblem()">Submit New Problem</button>
+  </form>

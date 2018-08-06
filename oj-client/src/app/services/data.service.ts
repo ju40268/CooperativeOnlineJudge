@@ -5,14 +5,18 @@ import { PROBLEMS } from "../mock-problems";
 @Injectable()
 export class DataService {
 
+  localProblemList: Problem[] = PROBLEMS;
   constructor() { }
 
   getProblems(): Problem[] {
-    return PROBLEMS;
+    return this.localProblemList;
   }
 
   getProblem(id: number): Problem {
-    return PROBLEMS.find((problem) => problem.id === id);
+    return this.localProblemList.find((problem) => problem.id === id);
   }
-
+  addProblem(currentProblem: Problem): void{
+    currentProblem.id = this.localProblemList.length + 1;
+    this.localProblemList.push(currentProblem);
+  }
 }
