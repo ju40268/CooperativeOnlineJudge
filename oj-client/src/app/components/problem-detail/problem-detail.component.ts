@@ -18,7 +18,7 @@ export class ProblemDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.data.findSingleProblem(+params.id)
+      this.data.findSingleProblem(+params["id"])
           .then(problem => this.problem = problem);
     });
   }
