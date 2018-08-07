@@ -1,5 +1,4 @@
 <div class="ui raised very padded text container segment">
-  <app-navibar></app-navibar>
   <app-new-problem></app-new-problem>  
   <div class="ui celled list">
     <a class="item" *ngFor="let problem of problems" [routerLink]="['/problems', problem.id]">
