@@ -11,6 +11,9 @@ export class ProblemDetailComponent implements OnInit {
 
   problem: Problem;
 
+
+
+
   constructor(
     private route: ActivatedRoute,
     @Inject("data") private data
